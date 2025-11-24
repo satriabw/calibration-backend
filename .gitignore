@@ -1,0 +1,70 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+env/
+venv/
+ENV/
+.venv/
+venv.bak/
+env.bak/
+
+# Flask instance folder and local SQLite dbs
+instance/
+*.sqlite3
+*.db
+
+# Environment variables
+.env
+
+# Artifacts directory
+artifacts/
+artifacts
+
+# Test / coverage / tooling
+.pytest_cache/
+coverage.xml
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+.mypy_cache/
+.pytype/
+
+# Logs and temporary files
+*.log
+logs/
+tmp/
+temp/
+
+# Editors and IDEs
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Docker overrides
+docker-compose.override.yml
+/templates
