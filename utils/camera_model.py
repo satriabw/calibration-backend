@@ -1,4 +1,4 @@
-# https://github.com/AubreyC/trajectory-extractor/blob/master/traj_ext/tracker/cameramodel.py
+# Inspired from https://github.com/AubreyC/trajectory-extractor/blob/master/traj_ext/tracker/cameramodel.py
 import numpy as np
 import cv2
 

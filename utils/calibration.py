@@ -16,7 +16,7 @@ LOCATION_SCALING_FACTOR = 111318.84502145034
 LOCATION_SCALING_FACTOR_INV = 0.000008983204953368922
 
 # ----- Callibration Functions -----
-#  Taken from https://github.com/AubreyC/trajectory-extractor/blob/master/traj_ext/
+#  Inspired from https://github.com/AubreyC/trajectory-extractor/blob/master/traj_ext/
 def get_scale_longitude_factor(lat):
     scale = math.cos(math.radians(lat))
     return scale
@@ -118,9 +118,9 @@ def get_K_from_homography(H, image_size):
         cy = image_size[0] / 2.0
         return fx, fy, cx, cy
 
-def estimate_camera_intrinsics(image_size, image_points, model_points_3d, satellite_mode=False, objective_func=None, guess_focal=False):
-    if satellite_mode:
-        # Set focal length to image height for satellite mode
+def estimate_camera_intrinsics(image_size, image_points, model_points_3d, bev_mode=False, objective_func=None, guess_focal=False):
+    if bev_mode:
+        # Set focal length to image height for bev mode
         return image_size[0], (image_size[1] / 2, image_size[0] / 2)
     
     # Initial guess
@@ -245,7 +245,7 @@ def calibrate(image, pixels, world_coordinates, origin, version):
         image_size=image_np.shape[:2],
         image_points=pixel_points,
         model_points_3d=latlon_NED,
-        satellite_mode=False,
+        bev_mode=False,
         objective_func=get_reprojection_error
     )
     camera_matrix = build_camera_matrix(focal_length, center)
